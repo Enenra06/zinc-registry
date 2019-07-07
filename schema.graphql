@@ -1,0 +1,29 @@
+type ClaimSet @entity {
+  id: ID!
+  subject: Bytes! # address
+  issuer: Bytes! # address
+  id_bytes: Bytes! # bytes32
+  key: Bytes! # bytes32
+  data: Bytes! # bytes32
+  updatedAt: BigInt! # uint256
+}
+
+type ClaimRemoved @entity {
+  id: ID!
+  subject: Bytes! # address
+  issuer: Bytes! # address
+  id_bytes: Bytes! # bytes32
+  key: Bytes! # bytes32
+  removedAt: BigInt! # uint256
+}
+
+type OwnershipRenounced @entity {
+  id: ID!
+  previousOwner: Bytes! # address
+}
+
+type OwnershipTransferred @entity {
+  id: ID!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+}
